@@ -1,24 +1,20 @@
 package pl.infoshare.springdi.airports.provider.http;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import pl.infoshare.springdi.airports.model.Airport;
+import pl.infoshare.springdi.airports.model.HttpAirportResponse;
 import pl.infoshare.springdi.airports.provider.AirportProvider;
 import pl.infoshare.springdi.airports.provider.HttpSource;
-import pl.infoshare.springdi.airports.model.HttpAirportResponse;
 
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.Optional;
 
 import static java.net.http.HttpResponse.BodyHandlers.ofString;
 
 @Component
-@Profile("http")
 @HttpSource
 @RequiredArgsConstructor
 public class HttpAirportProvider implements AirportProvider {
