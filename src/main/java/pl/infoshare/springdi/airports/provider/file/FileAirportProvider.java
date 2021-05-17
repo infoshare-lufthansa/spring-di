@@ -12,6 +12,7 @@ import pl.infoshare.springdi.configuration.properties.FileSourceProperties;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,12 +22,13 @@ import java.util.Optional;
 @RequiredArgsConstructor
 class FileAirportProvider implements AirportProvider {
 
+    public static final Path AIRPORTS_PATH = Paths.get("airports.csv");
+
     private final Map<String, Airport> airports = new HashMap<>();
-    private final FileSourceProperties fileSourceProperties;
 
     @PostConstruct
     void init() throws IOException {
-        Files.readAllLines(fileSourceProperties.getPath())
+        Files.readAllLines(AIRPORTS_PATH)
                 .stream()
                 .map(line -> line.split(","))
                 .map(line -> new Airport(line[0], line[1], Continent.valueOf(line[2])))
