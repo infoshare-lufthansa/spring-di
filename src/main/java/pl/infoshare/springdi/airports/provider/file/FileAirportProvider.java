@@ -1,7 +1,6 @@
 package pl.infoshare.springdi.airports.provider.file;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import pl.infoshare.springdi.airports.model.Airport;
 import pl.infoshare.springdi.airports.model.Continent;
@@ -18,7 +17,6 @@ import java.util.Optional;
 
 @Component
 @FileSource
-@Profile("file")
 @RequiredArgsConstructor
 class FileAirportProvider implements AirportProvider {
 
