@@ -1,0 +1,13 @@
+GET http://localhost:8080/api/airports/JFK
+
+###
+
+GET http://localhost:8080/api/airports/LHR
+
+###
+
+GET http://localhost:8080/api/airports/RIO
+
+###
+
+GET http://localhost:8080/api/airports/NIEISTNIEJE

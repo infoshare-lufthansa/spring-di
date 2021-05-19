@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
+/**
+ * Uwaga: Potrzebne dopiero do zadania piątego.
+ */
 @Value
 public class Claim {
     private final static BigDecimal MINUTES_IN_HOUR = BigDecimal.valueOf(60);
@@ -43,3 +46,4 @@ public class Claim {
         return type == ClaimType.DELAYED;
     }
 }
+
