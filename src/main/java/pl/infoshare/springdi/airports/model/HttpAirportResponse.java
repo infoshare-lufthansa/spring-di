@@ -3,6 +3,7 @@ package pl.infoshare.springdi.airports.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Value;
 
@@ -31,6 +32,7 @@ public class HttpAirportResponse {
      */
     public static HttpAirportResponse fromResponse(String body) {
         var objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         try {
             return objectMapper.readValue(body, HttpAirportResponse.class);
