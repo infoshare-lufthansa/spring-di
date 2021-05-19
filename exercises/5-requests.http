@@ -1,0 +1,38 @@
+###
+POST http://localhost:8080/api/eligibility-check
+Content-Type: application/json
+
+{
+  "type": "CANCELLED",
+  "totalDelay": 121,
+  "startingAirport": "JFK",
+  "destinationAirport": "LHR",
+  "flightDate": "2020-01-20"
+}
+
+### Brazil eligible
+
+POST http://localhost:8080/api/eligibility-check
+Content-Type: application/json
+
+{
+  "type": "DELAYED",
+  "totalDelay": 181,
+  "startingAirport": "RIO",
+  "destinationAirport": "SAO",
+  "flightDate": "2018-01-20"
+}
+
+###
+POST http://localhost:8080/api/eligibility-check
+Content-Type: application/json
+
+{
+  "type": "DELAYED",
+  "totalDelay": 10,
+  "startingAirport": "RIO",
+  "destinationAirport": "SAO",
+  "flightDate": "2014-01-20"
+}
+
+###

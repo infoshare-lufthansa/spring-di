@@ -5,15 +5,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Value;
-import pl.infoshare.springdi.airports.model.Continent;
 
 import java.io.UncheckedIOException;
 
+/**
+ * Uwaga: Potrzebne dopiero do zadania trzeciego.
+ * Model reprezentujący odpowiedź z serwisu pozwalającego na wyszukiwanie lotnisk na podstawie ich kodu IATA. Do konwersji z JSONa na obiekt wykorzystuje bibliotekę Jackson.
+ */
 @Value
 public class HttpAirportResponse {
+    /**
+     * Określa czy udało się wyszukać lotnisko czy nie.
+     */
     boolean status;
+    /**
+     * Zawiera podstawowe informacje o lotnisku
+     */
     Airport airport;
 
+    /**
+     * Statyczna faktorka konwertujący JSON Body otrzymane jako String w pełnoprawny obiekt reprezentujący odpowiedź
+     * z serwisu
+     * @param body JSON z odpowiedzią
+     * @return skonwertowany z JSONa obiekt
+     */
     public static HttpAirportResponse fromResponse(String body) {
         var objectMapper = new ObjectMapper();
 
