@@ -10,7 +10,7 @@ import lombok.Value;
 import java.io.UncheckedIOException;
 
 /**
- * Uwaga: Potrzebne dopiero do zadania trzeciego.
+ * Uwaga: Potrzebne dopiero do zadania drugiego.
  * Model reprezentujący odpowiedź z serwisu pozwalającego na wyszukiwanie lotnisk na podstawie ich kodu IATA. Do konwersji z JSONa na obiekt wykorzystuje bibliotekę Jackson.
  */
 @Value
