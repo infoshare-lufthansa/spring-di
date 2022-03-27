@@ -10,7 +10,7 @@ import lombok.Value;
 import java.io.UncheckedIOException;
 
 /**
- * Uwaga: Potrzebne dopiero do zadania trzeciego.
+ * Uwaga: Potrzebne dopiero do zadania drugiego.
  * Model reprezentujący odpowiedź z serwisu pozwalającego na wyszukiwanie lotnisk na podstawie ich kodu IATA. Do konwersji z JSONa na obiekt wykorzystuje bibliotekę Jackson.
  */
 @Value
@@ -19,14 +19,11 @@ public class HttpAirportResponse {
      * Określa czy udało się wyszukać lotnisko czy nie.
      */
     boolean status;
-    /**
-     * Zawiera podstawowe informacje o lotnisku
-     */
     Airport airport;
 
     /**
-     * Statyczna faktorka konwertujący JSON Body otrzymane jako String w pełnoprawny obiekt reprezentujący odpowiedź
-     * z serwisu
+     * Statyczna faktorka konwertująca JSON Body otrzymane jako String w pełnoprawny obiekt reprezentujący odpowiedź z serwisu.
+     *
      * @param body JSON z odpowiedzią
      * @return skonwertowany z JSONa obiekt
      */
